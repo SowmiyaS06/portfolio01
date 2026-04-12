@@ -49,6 +49,35 @@ html.dark body {
   animation: heroGradientShift 14s ease-in-out infinite;
 }
 
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes avatarFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.avatar-float {
+  animation: avatarFloat 5s ease-in-out infinite;
+}
+
 @keyframes roleTyping {
   from {
     width: 0;
@@ -142,6 +171,8 @@ html.dark body {
   }
 
   .hero-gradient-flow,
+  .animate-spin-slow,
+  .avatar-float,
   .typing-role,
   .subtle-bounce {
     animation: none;

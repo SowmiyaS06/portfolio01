@@ -1,6 +1,32 @@
+import { motion } from 'framer-motion'
+import { FaEnvelope, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
 import Section from '../Section'
 
 function ContactSection() {
+  const quickContactButtons = [
+    {
+      label: 'WhatsApp',
+      href: 'https://wa.me/919025363352',
+      icon: <FaWhatsapp className="h-4 w-4" aria-hidden="true" />,
+      className:
+        'bg-emerald-500 text-white hover:bg-emerald-600 dark:bg-emerald-500 dark:hover:bg-emerald-600',
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/sowmiya-selvaraj-540240377',
+      icon: <FaLinkedinIn className="h-4 w-4" aria-hidden="true" />,
+      className:
+        'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700',
+    },
+    {
+      label: 'Email',
+      href: 'mailto:sowmiyaselvaraj9025@gmail.com',
+      icon: <FaEnvelope className="h-4 w-4" aria-hidden="true" />,
+      className:
+        'bg-rose-500 text-white hover:bg-rose-600 dark:bg-rose-500 dark:hover:bg-rose-600',
+    },
+  ]
+
   const contactItems = [
     {
       label: 'Email',
@@ -63,6 +89,32 @@ function ContactSection() {
         <p className="text-base leading-relaxed text-slate-700 sm:text-lg dark:text-slate-300">
           Feel free to reach out for collaborations, projects, or opportunities.
         </p>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          className="grid gap-3 sm:grid-cols-3"
+        >
+          {quickContactButtons.map((button, index) => (
+            <motion.a
+              key={button.label}
+              href={button.href}
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: index * 0.08 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className={`inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold shadow-md transition-all duration-300 ${button.className}`}
+            >
+              {button.icon}
+              <span>{button.label}</span>
+            </motion.a>
+          ))}
+        </motion.div>
         <div className="grid gap-4 md:grid-cols-2">
           {contactItems.map((item) => (
             <a
