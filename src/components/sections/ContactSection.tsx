@@ -56,11 +56,11 @@ function ContactSection() {
     <Section
       id="contact"
       title="Contact"
-      className="min-h-screen bg-slate-950 flex items-center"
+      className="min-h-screen bg-slate-100 flex items-center dark:bg-slate-950"
       contentClassName="w-full"
     >
       <div className="w-full max-w-4xl space-y-8 text-center">
-        <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
+        <p className="text-base leading-relaxed text-slate-700 sm:text-lg dark:text-slate-300">
           Feel free to reach out for collaborations, projects, or opportunities.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
@@ -70,13 +70,13 @@ function ContactSection() {
               href={item.href}
               target={item.external ? '_blank' : undefined}
               rel={item.external ? 'noreferrer' : undefined}
-              className="rounded-2xl border border-cyan-300/20 bg-white/5 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/10"
+              className="rounded-2xl border border-cyan-500/20 bg-white p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-cyan-50/40 dark:border-cyan-300/20 dark:bg-white/5 dark:hover:border-cyan-300/40 dark:hover:bg-white/10"
             >
-              <div className="flex items-center gap-2 text-cyan-300">
+              <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300">
                 {item.icon}
                 <p className="text-sm uppercase tracking-[0.2em]">{item.label}</p>
               </div>
-              <p className="mt-3 break-all text-base font-medium text-white sm:text-lg">{item.value}</p>
+              <p className="mt-3 break-all text-base font-medium text-slate-900 sm:text-lg dark:text-white">{item.value}</p>
             </a>
           ))}
         </div>

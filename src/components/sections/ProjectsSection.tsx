@@ -46,7 +46,7 @@ function ProjectsSection() {
     <Section
       id="projects"
       title="Projects"
-      className="min-h-screen bg-slate-900/90 flex items-center"
+      className="min-h-screen bg-white/90 flex items-center dark:bg-slate-900/90"
       contentClassName="w-full"
     >
       <motion.div
@@ -62,17 +62,17 @@ function ProjectsSection() {
             variants={staggerItem}
             whileHover={{ scale: 1.03, y: -6 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-lg shadow-cyan-950/10 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-cyan-900/30"
+            className="group flex h-full flex-col justify-between rounded-2xl border border-cyan-500/20 bg-white p-6 shadow-lg shadow-cyan-700/10 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-cyan-700/20 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-cyan-950/10 dark:hover:border-cyan-300/40 dark:hover:shadow-cyan-900/30"
           >
             <div>
-              <h3 className="text-xl font-semibold text-white transition group-hover:text-cyan-300">
+              <h3 className="text-xl font-semibold text-slate-900 transition group-hover:text-cyan-700 dark:text-white dark:group-hover:text-cyan-300">
                 {project.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-slate-300">{project.description}</p>
-              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+              <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">{project.description}</p>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-slate-300">
                 {project.points.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-300" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-600 dark:bg-cyan-300" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -81,7 +81,7 @@ function ProjectsSection() {
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-cyan-300/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200"
+                    className="rounded-full border border-cyan-500/35 bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-700 dark:border-cyan-300/30 dark:bg-cyan-500/10 dark:text-cyan-200"
                   >
                     {tech}
                   </span>
@@ -94,7 +94,7 @@ function ProjectsSection() {
                 href={project.githubUrl ?? '#'}
                 target={project.githubUrl ? '_blank' : undefined}
                 rel={project.githubUrl ? 'noreferrer' : undefined}
-                className="inline-flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-cyan-300 hover:text-slate-950"
+                className="inline-flex items-center justify-center rounded-lg bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-800 transition-all duration-300 hover:bg-cyan-600 hover:text-white dark:bg-white/10 dark:text-white dark:hover:bg-cyan-300 dark:hover:text-slate-950"
                 aria-label={`Open GitHub repository for ${project.title}`}
               >
                 GitHub
