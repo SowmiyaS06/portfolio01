@@ -9,8 +9,8 @@ type NavbarProps = {
 
 function Navbar({ links }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-950/75 backdrop-blur-lg">
+      <nav className="flex w-full items-center justify-between px-6 py-4 md:px-12 lg:px-20">
         <a href="#hero" className="text-lg font-semibold tracking-wide text-cyan-300">
           Portfolio
         </a>
@@ -19,7 +19,7 @@ function Navbar({ links }: NavbarProps) {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-slate-200 transition hover:text-cyan-300"
+                className="text-slate-200 transition-all duration-300 hover:text-cyan-300"
               >
                 {link.label}
               </a>

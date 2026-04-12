@@ -2,8 +2,13 @@ import Section from '../Section'
 
 function AboutSection() {
   return (
-    <Section id="about" title="About">
-      <div className="max-w-3xl space-y-4 text-left">
+    <Section
+      id="about"
+      title="About"
+      className="min-h-screen bg-slate-900/90 flex items-center"
+      contentClassName="w-full"
+    >
+      <div className="w-full max-w-3xl space-y-6 text-center md:text-left">
         <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
           I am Sowmiya S, a B.Tech Information Technology student with a CGPA of 8.52.
         </p>

@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="bg-slate-950 text-slate-100">
       <Navbar links={navLinks} />
-      <main className="mx-auto max-w-6xl px-6 pb-20 pt-10 md:px-10 md:pt-14">
-        <HeroSection />
+      <HeroSection />
+      <main className="w-full">
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
