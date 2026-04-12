@@ -18,14 +18,14 @@ function HeroSection() {
           animate="visible"
         >
           <motion.div variants={fadeUp} className="mb-1 md:mb-2">
-            <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
+            <div className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56">
               <div className="absolute inset-0 rounded-full bg-cyan-400 blur-xl opacity-20" />
               <img
                 src={profileImage}
                 alt="Sowmiya S profile"
                 loading="eager"
                 decoding="async"
-                className="relative mx-auto h-40 w-40 rounded-full border-4 border-cyan-400 object-cover object-[center_top] shadow-xl contrast-110 brightness-105 saturate-110 transition duration-300 hover:scale-105 sm:h-48 sm:w-48"
+                className="relative mx-auto h-48 w-48 rounded-full border-4 border-cyan-400 object-cover object-[center_20%] scale-110 shadow-xl contrast-110 brightness-105 saturate-110 transition duration-300 hover:scale-105 sm:h-56 sm:w-56"
               />
             </div>
           </motion.div>
