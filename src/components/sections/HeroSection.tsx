@@ -8,6 +8,7 @@ function HeroSection() {
       id="hero"
       className="scroll-mt-20 relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-orange-900"
     >
+      <div className="hero-gradient-flow absolute inset-[-25%] opacity-35" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.16),transparent_48%)]" />
       <div className="relative flex min-h-screen w-full items-center justify-center px-6 py-20 md:px-12 md:py-28 lg:px-20">
         <motion.div
@@ -31,7 +32,7 @@ function HeroSection() {
             Sowmiya S
           </motion.h1>
           <motion.h2 variants={staggerItem} className="text-lg font-medium text-slate-200 sm:text-xl md:text-3xl">
-            Full-Stack Developer | AI Enthusiast
+            <span className="typing-role">Full-Stack Developer | AI Enthusiast</span>
           </motion.h2>
           <motion.div variants={staggerItem} className="space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg md:text-xl">
             <p>
@@ -70,6 +71,18 @@ function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
+      <motion.a
+        href="#about"
+        variants={staggerItem}
+        initial="hidden"
+        animate="visible"
+        className="subtle-bounce absolute bottom-8 left-1/2 -translate-x-1/2 text-cyan-200/85 transition-all duration-300 hover:text-cyan-100"
+        aria-label="Scroll to About section"
+      >
+        <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" aria-hidden="true">
+          <path d="M6 9.5 12 15.5 18 9.5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </motion.a>
     </section>
   )
 }

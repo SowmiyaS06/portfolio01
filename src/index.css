@@ -18,6 +18,78 @@ body {
   min-height: 100vh;
 }
 
+@keyframes heroGradientShift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1.04);
+  }
+
+  50% {
+    transform: translate3d(2%, 1%, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-2%, -1%, 0) scale(1.04);
+  }
+}
+
+.hero-gradient-flow {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(56, 189, 248, 0.22), transparent 42%),
+    radial-gradient(circle at 80% 70%, rgba(249, 115, 22, 0.2), transparent 45%),
+    linear-gradient(120deg, rgba(15, 23, 42, 0.2), rgba(2, 6, 23, 0.1));
+  filter: blur(8px);
+  animation: heroGradientShift 14s ease-in-out infinite;
+}
+
+@keyframes roleTyping {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes caretBlink {
+  0%,
+  49% {
+    border-right-color: rgba(165, 243, 252, 0.9);
+  }
+
+  50%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+.typing-role {
+  display: inline-block;
+  width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(165, 243, 252, 0.9);
+  animation:
+    roleTyping 2.4s steps(38, end) 0.45s forwards,
+    caretBlink 900ms step-end infinite;
+}
+
+@keyframes subtleBounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 6px);
+  }
+}
+
+.subtle-bounce {
+  animation: subtleBounce 2.1s ease-in-out infinite;
+}
+
 @keyframes heroFadeUp {
   from {
     opacity: 0;
@@ -59,5 +131,16 @@ body {
   .hero-reveal {
     opacity: 1;
     animation: none;
+  }
+
+  .hero-gradient-flow,
+  .typing-role,
+  .subtle-bounce {
+    animation: none;
+  }
+
+  .typing-role {
+    width: auto;
+    border-right: none;
   }
 }

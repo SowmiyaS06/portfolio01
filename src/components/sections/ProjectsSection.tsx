@@ -8,6 +8,7 @@ function ProjectsSection() {
       title: 'AI-Powered Interview Simulator',
       description: 'Real-time AI mock interviews with feedback.',
       techStack: ['React', 'Node.js', 'AI APIs'],
+      githubUrl: 'https://github.com/SowmiyaS06/Interview_generator',
       points: [
         'Solves the challenge of preparing for interviews without depending on a live interviewer.',
         'Generates realistic mock questions and gives immediate feedback on answers and communication.',
@@ -19,6 +20,7 @@ function ProjectsSection() {
       title: 'VEL Super Market (E-commerce)',
       description: 'Full-stack app with authentication and admin dashboard.',
       techStack: ['React', 'Express', 'MongoDB'],
+      githubUrl: 'https://github.com/SowmiyaS06/Consultancy',
       points: [
         'Addresses the need for a simple and organized grocery shopping experience with secure access.',
         'Includes user authentication, product browsing, shopping flow, and admin dashboard management.',
@@ -30,23 +32,12 @@ function ProjectsSection() {
       title: 'Smart Meeting Analysis Platform',
       description: 'Converts meetings into summaries and action points.',
       techStack: ['React', 'Python', 'NLP'],
+      githubUrl: 'https://github.com/Rakshitha2736/freelancers-hackathon',
       points: [
         'Solves the problem of turning long discussions into clear summaries and follow-up actions.',
         'Extracts key points from meeting content so teams can review decisions faster.',
         'Built using React, Python, and NLP concepts for text processing and organization.',
         'Makes meeting outcomes easier to scan, share, and act on after the call ends.',
-      ],
-    },
-    {
-      title: 'Git Workflow & Version Control Project',
-      description:
-        'Demonstrates Git branching, merging, and commit tracking. Shows understanding of version control and DevOps basics.',
-      techStack: ['Git', 'GitHub', 'DevOps Basics'],
-      points: [
-        'Demonstrates disciplined branching, merging, and commit tracking for collaborative development.',
-        'Highlights a clear version control workflow that supports team coordination and safe changes.',
-        'Built around Git, GitHub, and DevOps basics to reinforce release discipline and repository hygiene.',
-        'Shows practical understanding of how teams manage code, history, and collaboration at scale.',
       ],
     },
   ]
@@ -100,7 +91,9 @@ function ProjectsSection() {
 
             <div className="mt-8">
               <a
-                href="#"
+                href={project.githubUrl ?? '#'}
+                target={project.githubUrl ? '_blank' : undefined}
+                rel={project.githubUrl ? 'noreferrer' : undefined}
                 className="inline-flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-cyan-300 hover:text-slate-950"
                 aria-label={`Open GitHub repository for ${project.title}`}
               >
