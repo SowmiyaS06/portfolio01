@@ -17,11 +17,13 @@ function HeroSection() {
           animate="visible"
         >
           <motion.div variants={fadeUp} className="mb-1 md:mb-2">
-            <div className="rounded-full bg-white/5 p-2 shadow-[0_0_48px_rgba(34,211,238,0.32)] ring-1 ring-cyan-300/30 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+            <div className="overflow-hidden rounded-full bg-white/5 p-2 shadow-[0_0_48px_rgba(34,211,238,0.32)] ring-1 ring-cyan-300/30 transition-all duration-300 hover:scale-105">
               <img
                 src={profileImage}
                 alt="Sowmiya S profile"
-                className="h-40 w-40 rounded-full border-4 border-cyan-400 object-cover object-[center_14%] shadow-2xl shadow-cyan-500/35 sm:h-48 sm:w-48 md:h-52 md:w-52"
+                loading="eager"
+                decoding="async"
+                className="h-40 w-40 rounded-full border-4 border-cyan-400 object-cover object-[center_22%] scale-[1.35] shadow-2xl shadow-cyan-500/35 sm:h-48 sm:w-48 md:h-52 md:w-52"
               />
             </div>
           </motion.div>
