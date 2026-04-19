@@ -6,7 +6,7 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="scroll-mt-20 relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-sky-100 via-slate-100 to-orange-100 dark:from-blue-950 dark:via-slate-900 dark:to-orange-900"
+      className="scroll-mt-20 relative min-h-screen w-full overflow-hidden bg-linear-to-br from-sky-100 via-slate-100 to-orange-100 dark:from-blue-950 dark:via-slate-900 dark:to-orange-900"
     >
       <div className="hero-gradient-flow absolute inset-[-25%] opacity-35" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.16),transparent_48%)] dark:bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.16),transparent_48%)]" />
@@ -19,7 +19,7 @@ function HeroSection() {
         >
           <motion.div variants={fadeUp} className="mb-1 md:mb-2">
             <div className="avatar-float relative mx-auto flex h-44 w-44 items-center justify-center sm:h-48 sm:w-48">
-              <div className="animate-spin-slow absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 opacity-30 blur-xl" />
+              <div className="animate-spin-slow absolute inset-0 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 opacity-30 blur-xl" />
               <div className="absolute h-[90%] w-[90%] rounded-full border-4 border-cyan-400" />
               <img
                 src={profileImage}

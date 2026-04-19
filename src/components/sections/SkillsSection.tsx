@@ -116,7 +116,7 @@ function SkillsSection() {
                   </div>
                   <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-300/80 dark:bg-slate-700/80">
                     <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600"
+                      className="h-full rounded-full bg-linear-to-r from-cyan-400 to-cyan-600"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${item.progress}%` }}
                       viewport={{ once: true, amount: 0.7 }}

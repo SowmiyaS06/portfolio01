@@ -18,7 +18,11 @@ function App() {
     }
 
     const savedTheme = window.localStorage.getItem('portfolio-theme')
-    return savedTheme === 'light' ? 'light' : 'dark'
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      return savedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   })
 
   useEffect(() => {
