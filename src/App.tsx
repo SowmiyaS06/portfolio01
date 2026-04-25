@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import HeroSection from './components/sections/HeroSection'
 import AboutSection from './components/sections/AboutSection'
@@ -8,32 +7,10 @@ import CertificationsSection from './components/sections/CertificationsSection'
 import HighlightsSection from './components/sections/HighlightsSection'
 import ContactSection from './components/sections/ContactSection'
 import FooterSection from './components/sections/FooterSection'
-
-type Theme = 'light' | 'dark'
+import { useTheme } from './hooks/useTheme'
 
 function App() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') {
-      return 'dark'
-    }
-
-    const savedTheme = window.localStorage.getItem('portfolio-theme')
-    if (savedTheme === 'light' || savedTheme === 'dark') {
-      return savedTheme
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
-
-  useEffect(() => {
-    const root = document.documentElement
-    root.classList.toggle('dark', theme === 'dark')
-    window.localStorage.setItem('portfolio-theme', theme)
-  }, [theme])
-
-  const handleToggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-  }
+  const { theme, toggleTheme } = useTheme()
 
   const navLinks = [
     { label: 'Hero', href: '#hero' },
@@ -48,7 +25,7 @@ function App() {
 
   return (
     <div className="bg-slate-100 text-slate-900 transition-colors duration-500 dark:bg-slate-950 dark:text-slate-100">
-      <Navbar links={navLinks} theme={theme} onToggleTheme={handleToggleTheme} />
+      <Navbar links={navLinks} theme={theme} onToggleTheme={toggleTheme} />
       <HeroSection />
       <main className="w-full">
         <AboutSection />
